@@ -1,0 +1,85 @@
+\lipsum\cite{Karamcheti1956}
+
+\section{Which files contain what}
+
+You will most often only have to change \texttt{main.tex}, which contains
+title, author etc.; and \texttt{contents.tex}, which contains the main content;
+and sometimes \texttt{defs.tex}, which contains packages and corresponding
+options, and headers. You will only have to compile using the following
+commands (alternately via \texttt{arara}):
+\begin{itemize}
+	\item \texttt{pdflatex main}
+	\item \texttt{bibtex main}
+	\item \texttt{pdflatex main}
+	\item \texttt{pdflatex main}
+\end{itemize}
+
+During preparation if you only run \texttt{pdflatex main}, this would be
+faster, the only problem would be that references and citations would not be
+proper.
+
+\textbf{Save the final pdf document such that it contains the report number
+(see top right of the page)}
+
+\section{Tables}
+
+Use \texttt{booktabs} package. An example is Tab.~\ref{tb:sample}
+
+\begin{table}
+\caption{The example table from \texttt{booktabs} package.}
+	\label{tb:sample}
+	\centering
+\begin{tabular}{@{}llr@{}}
+\toprule
+\multicolumn{2}{c}{Item} \\
+\cmidrule(r){1-2}Animal & Description & Price (\$)\\
+\midrule
+Gnat  & per gram  & 13.65 \\
+& each      & 0.01 \\
+Gnu   & stuffed   & 92.50 \\
+Emu   & stuffed   & 33.33 \\
+Armadillo & frozen & 8.99 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Figures}
+
+Your sources figures should be either \texttt{.pdf} or \texttt{.eps} vector
+graphics (not converting \texttt{png, jpg} etc. to pdf/eps but true vector
+graphics!) unless impossible.
+
+Use \texttt{subfig} package to include multiple figures with the same caption.
+
+\section{References, citations}
+
+You should have a \texttt{.bib} file (\texttt{bib.bib} in this template folder)
+containing bibtex entries.
+
+Use bibtex (the compilation order would be pdflatex - bibtex - pdflatex -
+pdflatex for the final compilation because it takes to pdflatex commands to
+properly include references).
+
+See \texttt{http://merkel.texture.rocks/Latex/natbib.php} for details and
+options for citation using \texttt{natbib} (included in the template; in
+\texttt{defs.tex})
+
+Most importantly theres two main ways for referencing: \texttt{citet} and
+\texttt{citep}.
+
+\texttt{citep} is the same as \texttt{cite} and the refernces is as:
+\citep{Karamcheti1956}. \texttt{citet} is text citation and is as:
+\citet{Karamcheti1956}.
+
+You can refer your own previous reports by following the \texttt{techreport}
+bibtex style:
+
+\begin{verbatim}
+@techreport{Who2019-07,
+author = {D. Who},
+title = {Internal report format},
+institution = {abs Lab, Institute of LT},
+number = {2019(07)21},
+year = 2019
+}
+\end{verbatim}

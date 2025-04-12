@@ -1,0 +1,29 @@
+%\usepackage[scaled]{helvet}
+\usepackage{PTSansNarrow}
+\usepackage{fourier}
+\usepackage{microtype, graphicx, amsmath, amsfonts, nicefrac, siunitx, amssymb, parskip}
+\usepackage{wrapfig, lipsum, bm, booktabs,xcolor}
+\usepackage[authoryear]{natbib}
+\graphicspath{{./figures}}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\setlist{noitemsep}
+\usepackage{scrlayer-scrpage}
+\usepackage{datetime}
+\lohead[\emph{\textsf{abc Lab, Dr. Who, Institute of LT\hfill Report Nr.
+\dashdate\today}}]{\emph{\textsf{abs Lab, Dr. Who, Institute of LT\hfill
+Report Nr. \dashdate\today}}}
+\newcommand{\textmath}[1]{$\displaystyle#1$}
+\newcommand{\tmath}{\textmath}
+\stepcounter{chapter}
+\setlength{\textheight}{9.62in}
+\linespread{1.15}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\newcommand{\titletext}[1]{\begin{flushleft}#1\end{flushleft}}
