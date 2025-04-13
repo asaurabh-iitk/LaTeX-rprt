@@ -4,13 +4,14 @@
 	"name": "Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
-	"features": {},
+	"features": {
+		"ghcr.io/prulloac/devcontainer-features/latex:1": {}
+	},
 	"customizations": {
 		"vscode": {
-			"extensions": ["James-Yu.latex-workshop","Microsoft.Docker"]
+			"extensions": ["James-Yu.latex-workshop"]
 		}
-	},
-	"remoteUser": "vscode"
+	}
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
